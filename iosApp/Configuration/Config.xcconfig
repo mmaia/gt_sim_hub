@@ -1,0 +1,7 @@
+TEAM_ID=
+
+PRODUCT_NAME=gt_sim_hub
+PRODUCT_BUNDLE_IDENTIFIER=com.mgroo.gtsimhub.gt_sim_hub.gt_sim_hub$(TEAM_ID)
+
+CURRENT_PROJECT_VERSION=1
+MARKETING_VERSION=1.0
