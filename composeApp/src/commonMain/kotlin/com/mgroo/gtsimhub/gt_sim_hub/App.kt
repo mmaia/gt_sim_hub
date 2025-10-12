@@ -1,11 +1,9 @@
 package com.mgroo.gtsimhub.gt_sim_hub
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -40,11 +38,10 @@ fun App() {
 @Composable
 fun HomeScreen() {
     // Replace with your actual client ID from the Discord Developer Portal
-    val discordClientId = "YOUR_DISCORD_CLIENT_ID"
-    val discordAuthUrl = "https://discord.com/api/oauth2/authorize?client_id=$discordClientId&response_type=code&redirect_uri=gtsimhub%3A%2F%2Fcallback&scope=identify"
-
+    val discordClientId = "1426838693150326825"
+    val discordAuthUrl = "https://discord.com/oauth2/authorize?client_id=$discordClientId&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8888%2Fapi%2Fauth%2Fdiscord%2Fredirect&scope=identify+email"
     // A function to trigger the authentication flow
-    val openUrl = @Composable { url: String -> openUrl(url) }
+    val openUrl = { url: String -> openUrl(url) }
 
     Box(modifier = Modifier.fillMaxSize()) {
         Image(
