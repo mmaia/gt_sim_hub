@@ -1,9 +1,13 @@
 package com.mgroo.gtsimhub.gt_sim_hub
 
-import android.os.Build
+import android.content.Intent
+import android.net.Uri
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
 
-class AndroidPlatform : Platform {
-    override val name: String = "Android ${Build.VERSION.SDK_INT}"
+@Composable
+internal actual fun openUrl(url: String) {
+    val context = LocalContext.current
+    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+    context.startActivity(intent)
 }
-
-actual fun getPlatform(): Platform = AndroidPlatform()

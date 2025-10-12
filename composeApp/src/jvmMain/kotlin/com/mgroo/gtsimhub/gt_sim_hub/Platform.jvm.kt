@@ -1,7 +1,11 @@
 package com.mgroo.gtsimhub.gt_sim_hub
 
-class JVMPlatform : Platform {
-    override val name: String = "Java ${System.getProperty("java.version")}"
-}
+import androidx.compose.runtime.Composable
+import java.awt.Desktop
+import java.net.URI
 
-actual fun getPlatform(): Platform = JVMPlatform()
+@Composable
+internal actual fun openUrl(url: String) {
+    val desktop = Desktop.getDesktop()
+    desktop.browse(URI.create(url))
+}

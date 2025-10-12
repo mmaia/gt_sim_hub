@@ -1,9 +1,11 @@
 package com.mgroo.gtsimhub.gt_sim_hub
 
-import platform.UIKit.UIDevice
+import androidx.compose.runtime.Composable
+import platform.Foundation.NSURL
+import platform.UIKit.UIApplication
 
-class IOSPlatform : Platform {
-    override val name: String = UIDevice.currentDevice.systemName() + " " + UIDevice.currentDevice.systemVersion
+@Composable
+internal actual fun openUrl(url: String) {
+    val nsUrl = NSURL(string = url)
+    UIApplication.sharedApplication.openURL(nsUrl)
 }
-
-actual fun getPlatform(): Platform = IOSPlatform()

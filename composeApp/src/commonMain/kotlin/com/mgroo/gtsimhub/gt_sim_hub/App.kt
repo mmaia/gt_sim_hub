@@ -39,6 +39,13 @@ fun App() {
 
 @Composable
 fun HomeScreen() {
+    // Replace with your actual client ID from the Discord Developer Portal
+    val discordClientId = "YOUR_DISCORD_CLIENT_ID"
+    val discordAuthUrl = "https://discord.com/api/oauth2/authorize?client_id=$discordClientId&response_type=code&redirect_uri=gtsimhub%3A%2F%2Fcallback&scope=identify"
+
+    // A function to trigger the authentication flow
+    val openUrl = @Composable { url: String -> openUrl(url) }
+
     Box(modifier = Modifier.fillMaxSize()) {
         Image(
             painter = painterResource(Res.drawable.bkground_blurred),
@@ -57,7 +64,7 @@ fun HomeScreen() {
                 style = MaterialTheme.typography.headlineLarge,
                 color = Color.White)
             Spacer(modifier = Modifier.height(64.dp))
-            Button(onClick = { /* TODO: Implement Discord Authentication */ }) {
+            Button(onClick = { openUrl(discordAuthUrl) }) {
                 Icon(painterResource(Res.drawable.Discord_Symbol_Blurple), contentDescription = "Discord Logo", modifier = Modifier.size(24.dp))
                 Spacer(modifier = Modifier.width(8.dp))
                 Text("Login with Discord")

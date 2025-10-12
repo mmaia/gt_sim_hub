@@ -1,7 +1,6 @@
 package com.mgroo.gtsimhub.gt_sim_hub
 
-interface Platform {
-    val name: String
-}
+import androidx.compose.runtime.Composable
 
-expect fun getPlatform(): Platform
+@Composable
+internal expect fun openUrl(url: String)
