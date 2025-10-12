@@ -6,7 +6,7 @@ import androidx.compose.ui.window.application
 fun main() = application {
     Window(
         onCloseRequest = ::exitApplication,
-        title = "gt_sim_hub",
+        title = "GT League Hub",
     ) {
         App()
     }
