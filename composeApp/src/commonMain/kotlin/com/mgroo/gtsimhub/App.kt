@@ -1,9 +1,9 @@
-package com.mgroo.gtsimhub.gt_sim_hub
+package com.mgroo.gtsimhub
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -20,13 +20,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
+import com.mgroo.gtsimhub.gt_sim_hub.openUrl
 import gt_sim_hub.composeapp.generated.resources.Discord_Symbol_Blurple
-import org.jetbrains.compose.resources.painterResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
-
 import gt_sim_hub.composeapp.generated.resources.Res
 import gt_sim_hub.composeapp.generated.resources.bkground_blurred
 import gt_sim_hub.composeapp.generated.resources.gt_league_hub_logo
+import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 @Preview
@@ -44,33 +44,39 @@ fun HomeScreen() {
     // A function to trigger the authentication flow
     val openUrl = { url: String -> openUrl(url) }
 
-    Box(modifier = Modifier.fillMaxSize()) {
+    Box(modifier = Modifier.Companion.fillMaxSize()) {
         Image(
             painter = painterResource(Res.drawable.bkground_blurred),
             contentDescription = "Background",
-            contentScale = ContentScale.Crop, // This scales the image to fill the screen, cropping excess
-            modifier = Modifier.fillMaxSize()
+            contentScale = ContentScale.Companion.Crop, // This scales the image to fill the screen, cropping excess
+            modifier = Modifier.Companion.fillMaxSize()
         )
         Column(
-            modifier = Modifier
+            modifier = Modifier.Companion
                 .safeContentPadding()
                 .fillMaxSize(),
-            horizontalAlignment = Alignment.CenterHorizontally,
+            horizontalAlignment = Alignment.Companion.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            Text("Welcome, let's go race!",
+            Text(
+                "Welcome, let's go race!",
                 style = MaterialTheme.typography.headlineLarge,
-                color = Color.White)
-            Spacer(modifier = Modifier.height(32.dp))
+                color = Color.Companion.White
+            )
+            Spacer(modifier = Modifier.Companion.height(32.dp))
             Image(
                 painter = painterResource(Res.drawable.gt_league_hub_logo),
                 contentDescription = "GT League Hub Logo",
-                modifier = Modifier.size(150.dp)
+                modifier = Modifier.Companion.size(150.dp)
             )
-            Spacer(modifier = Modifier.height(32.dp))
+            Spacer(modifier = Modifier.Companion.height(32.dp))
             Button(onClick = { openUrl(discordAuthUrl) }) {
-                Icon(painterResource(Res.drawable.Discord_Symbol_Blurple), contentDescription = "Discord Logo", modifier = Modifier.size(24.dp))
-                Spacer(modifier = Modifier.width(8.dp))
+                Icon(
+                    painterResource(Res.drawable.Discord_Symbol_Blurple),
+                    contentDescription = "Discord Logo",
+                    modifier = Modifier.Companion.size(24.dp)
+                )
+                Spacer(modifier = Modifier.Companion.width(8.dp))
                 Text("Login with Discord")
             }
         }
