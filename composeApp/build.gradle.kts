@@ -54,11 +54,11 @@ kotlin {
 }
 
 android {
-    namespace = "com.mgroo.gtsimhub.gt_sim_hub"
+    namespace = "com.mgroo.gtsimhub"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "com.mgroo.gtsimhub.gt_sim_hub"
+        applicationId = "com.mgroo.gtsimhub"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
@@ -86,11 +86,11 @@ dependencies {
 
 compose.desktop {
     application {
-        mainClass = "com.mgroo.gtsimhub.gt_sim_hub.MainKt"
+        mainClass = "com.mgroo.gtsimhub.MainKt"
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "com.mgroo.gtsimhub.gt_sim_hub"
+            packageName = "com.mgroo.gtsimhub"
             packageVersion = "1.0.0"
         }
     }

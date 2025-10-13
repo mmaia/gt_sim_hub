@@ -1,4 +1,4 @@
-package com.mgroo.gtsimhub.gt_sim_hub
+package com.mgroo.gtsimhub
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

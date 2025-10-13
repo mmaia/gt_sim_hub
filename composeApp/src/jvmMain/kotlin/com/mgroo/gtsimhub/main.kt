@@ -1,4 +1,4 @@
-package com.mgroo.gtsimhub.gt_sim_hub
+package com.mgroo.gtsimhub
 
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application

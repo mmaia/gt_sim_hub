@@ -1,4 +1,4 @@
-package com.mgroo.gtsimhub.gt_sim_hub
+package com.mgroo.gtsimhub
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
