@@ -26,6 +26,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 import gt_sim_hub.composeapp.generated.resources.Res
 import gt_sim_hub.composeapp.generated.resources.bkground_blurred
+import gt_sim_hub.composeapp.generated.resources.gt_league_hub_logo
 
 @Composable
 @Preview
@@ -57,10 +58,16 @@ fun HomeScreen() {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            Text("GT League Hub",
+            Text("Welcome, let's go race!",
                 style = MaterialTheme.typography.headlineLarge,
                 color = Color.White)
-            Spacer(modifier = Modifier.height(64.dp))
+            Spacer(modifier = Modifier.height(32.dp))
+            Image(
+                painter = painterResource(Res.drawable.gt_league_hub_logo),
+                contentDescription = "GT League Hub Logo",
+                modifier = Modifier.size(150.dp)
+            )
+            Spacer(modifier = Modifier.height(32.dp))
             Button(onClick = { openUrl(discordAuthUrl) }) {
                 Icon(painterResource(Res.drawable.Discord_Symbol_Blurple), contentDescription = "Discord Logo", modifier = Modifier.size(24.dp))
                 Spacer(modifier = Modifier.width(8.dp))
