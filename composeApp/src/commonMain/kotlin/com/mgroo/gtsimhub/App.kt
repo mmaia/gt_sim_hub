@@ -37,17 +37,11 @@ fun App() {
     }
 }
 
-val discordAuth = mutableStateOf(false)
 @Composable
 fun HomeScreen() {
-    // Replace with your actual client ID from the Discord Developer Portal
-    val discordClientId = "1426838693150326825"
-    val discordAuthUrl = "https://discord.com/oauth2/authorize?client_id=$discordClientId&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8888%2Fapi%2Fauth%2Fdiscord%2Fredirect&scope=identify+email"
-
-
 
     if(discordAuth.value) {
-        openUrl(discordAuthUrl)
+        openUrl(discordAuthUrl())
         discordAuth.value = false
     }
 
