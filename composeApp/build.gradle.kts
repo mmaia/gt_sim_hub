@@ -44,8 +44,8 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtimeCompose)
             // DataStore library
             implementation(libs.androidx.datastore)
-            // The Preferences DataStore library
             implementation(libs.androidx.datastore.preferences)
+            implementation(libs.crypto.rand)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
