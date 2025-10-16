@@ -48,6 +48,7 @@ fun HomeScreen() {
 
     if(discordAuth.value) {
         openUrl(discordAuthUrl)
+        discordAuth.value = false
     }
 
     Box(modifier = Modifier.fillMaxSize()) {
