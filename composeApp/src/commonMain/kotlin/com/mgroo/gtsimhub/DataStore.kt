@@ -13,4 +13,4 @@ fun createDataStore(producePath: () -> String): DataStore<Preferences> =
         produceFile = { producePath().toPath() }
     )
 
-internal const val dataStoreFileName = "gt_sim_hub_data.pb"
+internal const val dataStoreFileName = "gt_sim_hub_data.preferences_pb"
