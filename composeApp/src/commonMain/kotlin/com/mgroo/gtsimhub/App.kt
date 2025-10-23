@@ -44,6 +44,7 @@ fun HomeScreen() {
         openUrl(discordAuthUrl(state))
         saveState(state)
         discordAuth.value = false
+        // Navigate to AuthScreen
     }
 
     Box(modifier = Modifier.fillMaxSize()) {

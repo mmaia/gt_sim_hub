@@ -5,6 +5,8 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.runBlocking
 import org.kotlincrypto.random.CryptoRand
 import kotlin.io.encoding.Base64
@@ -34,4 +36,10 @@ fun saveState(state: String) {
             preferences[OAUTH_STATE_KEY] = state
         }
     }
+}
+
+fun readState(state: String): String? = runBlocking {
+    dataStore.data.map { preferences ->
+        preferences[OAUTH_STATE_KEY]
+    }.first()
 }
