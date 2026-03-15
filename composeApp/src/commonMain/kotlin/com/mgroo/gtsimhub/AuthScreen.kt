@@ -27,14 +27,14 @@ import gt_sim_hub.composeapp.generated.resources.gt_league_hub_logo
 import org.jetbrains.compose.resources.painterResource
 
 @Composable
-fun AuthScreen() {
+fun AuthScreen(onSignInSuccessful: () -> Unit) {
 
     if(discordAuth.value) {
         val state = generateSecureOAuthState()
         openUrl(discordAuthUrl(state))
         saveState(state)
         discordAuth.value = false
-        // Navigate to AuthScreen
+        onSignInSuccessful()
     }
 
     Box(modifier = Modifier.fillMaxSize()) {
