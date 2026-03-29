@@ -9,6 +9,7 @@ plugins {
     alias(libs.plugins.composeHotReload)
     alias(libs.plugins.ksp)
     alias(libs.plugins.androidx.room)
+    alias(libs.plugins.koin.compiler)
 }
 
 kotlin {
@@ -35,6 +36,7 @@ kotlin {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.androidx.room.sqlite.wrapper)
+            implementation("io.insert-koin:koin-android")
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -51,9 +53,12 @@ kotlin {
             implementation(libs.crypto.rand)
             implementation(libs.androidx.room.runtime)
             implementation(libs.androidx.sqlite.bundled)
+            implementation(project.dependencies.platform("io.insert-koin:koin-bom:4.2.0"))
+            implementation("io.insert-koin:koin-core")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+            implementation("io.insert-koin:koin-test")
         }
         jvmMain.dependencies {
             implementation(compose.desktop.currentOs)
