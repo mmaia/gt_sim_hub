@@ -10,6 +10,7 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.androidx.room)
     alias(libs.plugins.koin.compiler)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 kotlin {
@@ -37,6 +38,7 @@ kotlin {
             implementation(libs.androidx.activity.compose)
             implementation(libs.androidx.room.sqlite.wrapper)
             implementation("io.insert-koin:koin-android")
+            implementation(libs.ktor.client.okhttp)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -55,6 +57,10 @@ kotlin {
             implementation(libs.androidx.sqlite.bundled)
             implementation(project.dependencies.platform("io.insert-koin:koin-bom:4.2.0"))
             implementation("io.insert-koin:koin-core")
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.serialization.kotlinx.json)
+            implementation(libs.kotlinx.serialization.json)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -63,6 +69,7 @@ kotlin {
         jvmMain.dependencies {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutinesSwing)
+            implementation(libs.ktor.client.okhttp)
         }
     }
 }
